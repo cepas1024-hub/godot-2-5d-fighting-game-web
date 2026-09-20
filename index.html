@@ -37,13 +37,26 @@
     opacity:0;transform:scale(2.2);color:#ffcf6a}
   #msg.show{opacity:1;transform:scale(1);transition:all .25s cubic-bezier(.2,2,.4,1)}
   #msg.ko{color:#ff3020;font-size:96px}
-  .pad{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));display:flex;gap:12px;pointer-events:auto}
-  #padL{left:14px} #padR{right:14px}
-  .btn{width:64px;height:64px;border-radius:50%;border:2px solid #7a4a30;background:rgba(40,20,16,.55);
-    color:#ffd9a0;font:700 18px Impact,sans-serif;display:flex;align-items:center;justify-content:center;
-    pointer-events:auto}
-  .btn.sm{width:48px;height:48px;font-size:13px}
-  .btn:active{background:rgba(255,140,60,.5)}
+  .pad{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));pointer-events:none}
+  #padL{left:12px;display:flex;gap:10px;align-items:flex-end}
+  #padR{right:10px;width:236px;height:178px}
+  #padR .btn{position:absolute}
+  #padR [data-k="p"]{right:0;bottom:46px}
+  #padR [data-k="k"]{right:80px;bottom:6px}
+  #padR [data-k="h"]{right:80px;bottom:92px}
+  #padR [data-k="b"]{right:160px;bottom:46px}
+  #padR [data-k="s"]{right:176px;bottom:118px}
+  #padR [data-k="u"]{right:104px;bottom:128px}
+  .btn{width:72px;height:72px;border-radius:50%;border:none;background-size:cover;background-position:center;
+    display:flex;align-items:center;justify-content:center;pointer-events:auto;
+    filter:drop-shadow(0 3px 8px #000)}
+  .btn .icon{width:56%;height:56%;object-fit:contain;pointer-events:none}
+  .icon.l{transform:scaleX(-1)} .icon.u{transform:rotate(-90deg)}
+  .barFrame{position:absolute;inset:-7px -12px;background-size:100% 100%;background-repeat:no-repeat;
+    pointer-events:none;filter:drop-shadow(0 2px 6px #000)}
+  .clip{position:absolute;inset:0;overflow:hidden}
+  .btn.sm{width:54px;height:54px}
+  .btn:active{filter:brightness(1.6)}
   #overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
     background:rgba(0,0,0,.55);pointer-events:auto}
   .koBox{font:96px Impact;color:#ff3020;text-shadow:0 0 30px #f00;text-align:center}
@@ -69,8 +82,8 @@
 <body>
 <canvas id="game"></canvas>
 <div id="hud">
-  <div class="barWrap" id="wrap1"><div class="bar" id="hp1"></div></div>
-  <div class="barWrap" id="wrap2"><div class="bar" id="hp2"></div></div>
+  <div class="barWrap" id="wrap1"><div class="clip"><div class="bar" id="hp1"></div></div></div>
+  <div class="barWrap" id="wrap2"><div class="clip"><div class="bar" id="hp2"></div></div></div>
   <div class="meterWrap" id="mw1"><div class="meter" id="m1"></div></div>
   <div class="meterWrap" id="mw2"><div class="meter" id="m2"></div></div>
   <div class="tag" id="tag1">ASHFALL</div><div class="tag" id="tag2">VANGUARD</div>
@@ -112,6 +125,6 @@
 </div>
 <div id="overlay"></div>
 <div id="boot">ASHFALL</div>
-<script src="bundle.130db3e2.js"></script>
+<script src="bundle.d442c64c.js"></script>
 </body>
 </html>
