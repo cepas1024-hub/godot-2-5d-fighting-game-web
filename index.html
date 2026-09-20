@@ -20,6 +20,10 @@
   @keyframes pulse{to{filter:brightness(1.6)}}
   .tag{position:absolute;top:calc(36px + env(safe-area-inset-top));font-size:13px;letter-spacing:2px}
   #tag1{left:4%} #tag2{right:4%}
+  .meterWrap{position:absolute;top:calc(34px + env(safe-area-inset-top));width:30%;height:7px;background:rgba(20,10,14,.75);border:1px solid #4a3020}
+  #mw1{left:3%} #mw2{right:3%}
+  .meter{height:100%;width:0%;background:linear-gradient(90deg,#ffe9a0,#ff9a30);transition:width .15s}
+  #mw2 .meter{margin-left:auto;background:linear-gradient(90deg,#cfe9ff,#30a0ff)}
   .combo{position:absolute;top:calc(64px + env(safe-area-inset-top));font-size:22px;color:#ffe9b0;letter-spacing:2px}
   #combo1{left:5%} #combo2{right:5%}
   #msg{position:absolute;left:0;right:0;top:26%;text-align:center;font-size:64px;letter-spacing:8px;
@@ -31,6 +35,7 @@
   .btn{width:64px;height:64px;border-radius:50%;border:2px solid #7a4a30;background:rgba(40,20,16,.55);
     color:#ffd9a0;font:700 18px Impact,sans-serif;display:flex;align-items:center;justify-content:center;
     pointer-events:auto}
+  .btn.sm{width:48px;height:48px;font-size:13px}
   .btn:active{background:rgba(255,140,60,.5)}
   #overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
     background:rgba(0,0,0,.55);pointer-events:auto}
@@ -45,6 +50,8 @@
 <div id="hud">
   <div class="barWrap" id="wrap1"><div class="bar" id="hp1"></div></div>
   <div class="barWrap" id="wrap2"><div class="bar" id="hp2"></div></div>
+  <div class="meterWrap" id="mw1"><div class="meter" id="m1"></div></div>
+  <div class="meterWrap" id="mw2"><div class="meter" id="m2"></div></div>
   <div class="tag" id="tag1">ASHFALL</div><div class="tag" id="tag2">VANGUARD</div>
   <div class="combo" id="combo1"></div><div class="combo" id="combo2"></div>
   <div id="msg"></div>
@@ -59,9 +66,11 @@
   <div class="btn" data-k="h">H</div>
   <div class="btn" data-k="k">K</div>
   <div class="btn" data-k="p">P</div>
+  <div class="btn sm" data-k="s">SP</div>
+  <div class="btn sm" data-k="u">ULT</div>
 </div>
 <div id="overlay"></div>
 <div id="boot">ASHFALL</div>
-<script src="bundle.833df783.js"></script>
+<script src="bundle.ff9a9ac3.js"></script>
 </body>
 </html>
