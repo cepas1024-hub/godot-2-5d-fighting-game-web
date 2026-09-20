@@ -10,16 +10,23 @@
   #game{position:fixed;inset:0;width:100%;height:100%}
   #hud{position:fixed;inset:0;pointer-events:none;font-family:Impact,'Arial Black',sans-serif;
     color:#ffd9a0;text-shadow:0 2px 6px #000}
-  .barWrap{position:absolute;top:calc(10px + env(safe-area-inset-top));width:38%;height:22px;
-    background:rgba(20,10,14,.75);border:2px solid #6a4030;transform:skewX(-14deg);overflow:hidden}
-  #wrap1{left:3%} #wrap2{right:3%;transform:skewX(14deg)}
+  .barWrap{position:absolute;top:calc(16px + env(safe-area-inset-top));width:36%;height:24px;
+    background:linear-gradient(180deg,#241014,#12080a);border:2px solid #8a5a30;
+    box-shadow:0 0 0 2px #1a0c08,0 2px 10px #000,inset 0 0 8px #000;transform:skewX(-14deg);overflow:hidden}
+  #wrap1{left:7%} #wrap2{right:7%;transform:skewX(14deg)}
+  .hudImg{position:absolute;pointer-events:none;filter:drop-shadow(0 2px 6px #000)}
+  .hudImg.p1{top:calc(4px + env(safe-area-inset-top));left:calc(7% + 36% - 20px);width:64px;height:64px;
+    border-radius:50%;border:3px solid #b06a30;object-fit:cover}
+  .hudImg.p2{top:calc(4px + env(safe-area-inset-top));right:calc(7% + 36% - 20px);width:64px;height:64px;
+    border-radius:50%;border:3px solid #3a6a9a;object-fit:cover}
+  .hudImg.em{top:calc(6px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:58px;height:58px}
   .bar{height:100%;width:100%;background:linear-gradient(180deg,#ffd27a,#ff7a26 60%,#c33d10);
     transition:width .12s ease-out}
   #wrap2 .bar{margin-left:auto;background:linear-gradient(180deg,#bcd6ff,#3f8cff 60%,#143c9c)}
   .bar.low{background:linear-gradient(180deg,#ff9a8a,#e02020)!important;animation:pulse .5s infinite alternate}
   @keyframes pulse{to{filter:brightness(1.6)}}
-  .tag{position:absolute;top:calc(36px + env(safe-area-inset-top));font-size:13px;letter-spacing:2px}
-  #tag1{left:4%} #tag2{right:4%}
+  .tag{position:absolute;top:calc(44px + env(safe-area-inset-top));font-size:13px;letter-spacing:2px}
+  #tag1{left:8%} #tag2{right:8%}
   .meterWrap{position:absolute;top:calc(34px + env(safe-area-inset-top));width:30%;height:7px;background:rgba(20,10,14,.75);border:1px solid #4a3020}
   #mw1{left:3%} #mw2{right:3%}
   .meter{height:100%;width:0%;background:linear-gradient(90deg,#ffe9a0,#ff9a30);transition:width .15s}
@@ -83,7 +90,7 @@
   <div class="btn sm" data-k="s">SP</div>
   <div class="btn sm" data-k="u">ULT</div>
 </div>
-<div id="pbtn" class="btn sm" data-act="pause" style="display:none;position:fixed;top:calc(10px + env(safe-area-inset-top));left:50%;transform:translateX(-50%)">II</div>
+<div id="pbtn" class="btn sm" data-act="pause" style="display:none;position:fixed;top:calc(70px + env(safe-area-inset-top));right:2%">II</div>
 <div id="menu" class="ovl">
   <h1>ASHFALL</h1>
   <div class="sub">2.5D WEB 3D FIGHTER · DUSK CIRCUIT</div>
@@ -105,6 +112,6 @@
 </div>
 <div id="overlay"></div>
 <div id="boot">ASHFALL</div>
-<script src="bundle.ce1cf02d.js"></script>
+<script src="bundle.130db3e2.js"></script>
 </body>
 </html>
